@@ -16,8 +16,9 @@ class UI(QMainWindow):
 
         self.ft = cv2.freetype.createFreeType2()
         self.ft.loadFontData(fontFileName='Ubuntu-R.ttf',id=0)
-
-        self.file_path = "/home/fyp2selfdriving/Documents/traffic_light/paper/test1set/sample"
+#/home/fyp2selfdriving/Documents/traffic_light/paper/bbox_concatenate/xml_files/concat
+#/home/fyp2selfdriving/Documents/traffic_light/Yolov5/datasets/dualcam/images/test
+        self.img_path = "/home/fyp2selfdriving/Documents/traffic_light/Yolov5/datasets/dualcam/images/test"
         self.save_path = ""        
         self.index = 1
 
@@ -29,9 +30,9 @@ class UI(QMainWindow):
         self.buttonleft = self.findChild(QPushButton,"pushButton")
         self.buttonright = self.findChild(QPushButton,"pushButton_2")
         self.labelnarrow = self.findChild(QLabel, "label")
-        self.labelwide = self.findChild(QLabel, "label_2")
+
         self.labelnarrowtext = self.findChild(QLabel, "label_narrow")
-        self.labelwidetext = self.findChild(QLabel, "label_wide")
+
 
         # Click the dropdown box
         self.buttonleft.clicked.connect(self.clicker_left)
@@ -63,38 +64,31 @@ class UI(QMainWindow):
             self.view_img()
 
     def view_img(self):
-        fnamenarrow = self.file_path + "/narrow_t1_" + self.convert_to_str(self.index) + ".jpg"
-        fnamewide = self.file_path + "/wide_t1_" + self.convert_to_str(self.index) + ".jpg"
-
+        fnamenarrow = self.img_path + "/wide_t1_" + self.convert_to_str(self.index) + ".jpg"
 
         narrow_image_data = Data(fnamenarrow)
         bbox_narrow = self.process_image(narrow_image_data,False,True, self.ft)
         bbox_narrow = QImage(bbox_narrow, bbox_narrow.shape[1],\
                             bbox_narrow.shape[0], bbox_narrow.shape[1] * 3,QImage.Format_RGB888)
 
-        wide_image_data = Data(fnamewide)
-        bbox_wide = self.process_image(wide_image_data,False,True, self.ft)
-        bbox_wide = QImage(bbox_wide, bbox_wide.shape[1],\
-                            bbox_wide.shape[0], bbox_wide.shape[1] * 3,QImage.Format_RGB888)
-
         self.pixmapnarrow = QPixmap(bbox_narrow)
-        self.pixmapwide = QPixmap(bbox_wide)
-        self.labelnarrowtext.setText("narrow_t1_" + self.convert_to_str(self.index) + ".jpg")
-        self.labelwidetext.setText("wide_t1_" + self.convert_to_str(self.index) + ".jpg")
-        self.labelnarrow.setPixmap(self.pixmapnarrow.scaled(self.labelnarrow.size(),Qt.KeepAspectRatio,Qt.SmoothTransformation))
-        self.labelwide.setPixmap(self.pixmapwide.scaled(self.labelwide.size(),Qt.KeepAspectRatio,Qt.SmoothTransformation))
-        self.labelnarrow.setScaledContents = True
-        self.labelwide.setScaledContents = True
-        self.labelnarrow.setSizePolicy(QSizePolicy.Ignored,QSizePolicy.Ignored)
-        self.labelwide.setSizePolicy(QSizePolicy.Ignored,QSizePolicy.Ignored)
 
-    def save_imgs(self):
-        fnamenarrow = self.file_path + "2_narrow/narrow_2_" + self.convert_to_str(self.index) + ".jpg"
-        fnamewide = self.file_path + "2_wide/wide_2_" + self.convert_to_str(self.index) + ".jpg"
-        fnamenarrowsave = self.save_path + "narrow_2_" + self.convert_to_str(self.index) + ".jpg"
-        fnamewidesave = self.save_path + "wide_2_" + self.convert_to_str(self.index) + ".jpg"
-        shutil.copyfile(fnamenarrow , fnamenarrowsave)
-        shutil.copyfile(fnamewide , fnamewidesave)
+        self.labelnarrowtext.setText("t1_" + self.convert_to_str(self.index) + ".xml")
+
+        self.labelnarrow.setPixmap(self.pixmapnarrow.scaled(self.labelnarrow.size(),Qt.KeepAspectRatio,Qt.SmoothTransformation))
+
+        self.labelnarrow.setScaledContents = True
+
+        self.labelnarrow.setSizePolicy(QSizePolicy.Ignored,QSizePolicy.Ignored)
+
+
+    # def save_imgs(self):
+    #     fnamenarrow = self.file_path + "2_narrow/narrow_2_" + self.convert_to_str(self.index) + ".jpg"
+    #     fnamewide = self.file_path + "2_wide/wide_2_" + self.convert_to_str(self.index) + ".jpg"
+    #     fnamenarrowsave = self.save_path + "narrow_2_" + self.convert_to_str(self.index) + ".jpg"
+    #     fnamewidesave = self.save_path + "wide_2_" + self.convert_to_str(self.index) + ".jpg"
+    #     shutil.copyfile(fnamenarrow , fnamenarrowsave)
+    #     shutil.copyfile(fnamewide , fnamewidesave)
 
     def process_image(self,image_data,with_mask=False,with_bbox=False,fontft=None):
         image_data.image_path = image_data.image_path
