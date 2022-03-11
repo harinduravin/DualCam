@@ -43,6 +43,7 @@ We provide 2 visualizers to visualize images with the bounding boxes.
 
 <details open>
 <summary>Install</summary>
+
 Clone repo and install [requirements.txt](https://github.com/harinduravin/DualCam.git) in a [Python>=3.7.0](https://www.python.org/) environment
 
 ```bash
