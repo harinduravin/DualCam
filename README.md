@@ -1,15 +1,11 @@
 # DualCam Traffic Light Dataset
 
-### Training set annotations compiled in a video
+### A video compilation of training set ground truth
 
 [![Test set](https://img.youtube.com/vi/-MDhaj5U6ag/0.jpg)](https://www.youtube.com/watch?v=-MDhaj5U6ag)
 
-### Visualizer provided for viewing synchronized image pairs in the test set
-
-![Double frame visualizer](Images/sync_visualizer.jpg)
-
 ## Overview
-DualCam dataset is a benchmark traffic light dataset which covers urban and sub-urban areas. It consists of 1845 images of 1920x1080 resolution with 5639 instances.
+DualCam dataset is a benchmark traffic light dataset which covers urban and sub-urban areas. It consists of 2250 annotated images of 1920x1080 resolution with 8321 instances.
 
 ## Download
 The train set, test set 1, test set 2, test videos of DualCam traffic light dataset can be downloaded from following google drive links.
@@ -26,16 +22,16 @@ The annotations are given in  PASCAL VOC XML and YOLO annotation format.
 
 | Traffic light class  | Train set | Test set | Total |
 | -------------------- | --------- | -------- | ----- |
-| Green (d)            | 1198      | 437      | 1635  |
-| Empty-count-down (j) | 537       | 135      | 672   |
-| Yellow (b)           | 452       | 138      | 590   |
-| Red (a)              | 565       | 384      | 949   |
-| Empty (h)            | 222       | 131      | 353   |
-| Count-down (i)       | 346       | 146      | 492   |
-| Green-up (f)         | 426       | 205      | 631   |
-| Red-yellow (c)       | 66        | 25       | 91    |
-| Green-left (e)       | 55        | 27       | 82    |
-| Green-right (g)      | 115       | 29       | 144   |
+| Green (d)            | 1198      | 1251     | 2449  |
+| Empty-count-down (j) | 537       | 225      | 762   |
+| Yellow (b)           | 452       | 246      | 698   |
+| Red (a)              | 565       | 901      | 1466  |
+| Empty (h)            | 222       | 469      | 691   |
+| Count-down (i)       | 346       | 396      | 742   |
+| Green-up (f)         | 426       | 495      | 921   |
+| Red-yellow (c)       | 66        | 80       | 146   |
+| Green-left (e)       | 55        | 105      | 160   |
+| Green-right (g)      | 115       | 171      | 286   |
 
 
 ## Image Visualizers
@@ -66,3 +62,5 @@ python3 single_image_visualizer.py
 ```bash
 python3 sync_image_visualizer.py
 ```
+
+![Double frame visualizer](Images/sync_visualizer.jpg)
