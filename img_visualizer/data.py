@@ -18,7 +18,7 @@ class Data():
         # self.image_name = image_name
         self.image_path = image_path
         rootpath,filename = os.path.split(image_path)
-        self.annotation_path = '/home/fyp2selfdriving/Documents/traffic_light/paper/bbox_concatenate/xml_files/concat/'+filename[5:-4] + ".xml"
+        self.annotation_path = '/home/fyp2selfdriving/Documents/traffic_light/paper/combined_gt/finalized_1/xmlfiles/wide_'+filename[5:-4] + ".xml"
         # self.mask_path=os.path.join(root_dir,'SegmentationClass',image_name+'.png')
         print(self.annotation_path)
         self.annotations = self.load_masks()
