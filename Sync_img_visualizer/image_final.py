@@ -17,7 +17,7 @@ class UI(QMainWindow):
         self.ft = cv2.freetype.createFreeType2()
         self.ft.loadFontData(fontFileName='Ubuntu-R.ttf',id=0)
 
-        self.file_path = "/home/fyp2selfdriving/Documents/traffic_light/paper/test1set/sample"
+        self.file_path = "/home/fyp2selfdriving/Downloads/dataset_2022_03_11/sample"
         self.save_path = ""        
         self.index = 1
 
@@ -63,8 +63,8 @@ class UI(QMainWindow):
             self.view_img()
 
     def view_img(self):
-        fnamenarrow = self.file_path + "/narrow_t1_" + self.convert_to_str(self.index) + ".jpg"
-        fnamewide = self.file_path + "/wide_t1_" + self.convert_to_str(self.index) + ".jpg"
+        fnamenarrow = self.file_path + "/narrow_t2_" + self.convert_to_str(self.index) + ".jpg"
+        fnamewide = self.file_path + "/wide_t2_" + self.convert_to_str(self.index) + ".jpg"
 
 
         narrow_image_data = Data(fnamenarrow)
@@ -79,8 +79,8 @@ class UI(QMainWindow):
 
         self.pixmapnarrow = QPixmap(bbox_narrow)
         self.pixmapwide = QPixmap(bbox_wide)
-        self.labelnarrowtext.setText("narrow_t1_" + self.convert_to_str(self.index) + ".jpg")
-        self.labelwidetext.setText("wide_t1_" + self.convert_to_str(self.index) + ".jpg")
+        self.labelnarrowtext.setText("narrow_t2_" + self.convert_to_str(self.index) + ".jpg")
+        self.labelwidetext.setText("wide_t2_" + self.convert_to_str(self.index) + ".jpg")
         self.labelnarrow.setPixmap(self.pixmapnarrow.scaled(self.labelnarrow.size(),Qt.KeepAspectRatio,Qt.SmoothTransformation))
         self.labelwide.setPixmap(self.pixmapwide.scaled(self.labelwide.size(),Qt.KeepAspectRatio,Qt.SmoothTransformation))
         self.labelnarrow.setScaledContents = True
