@@ -22,16 +22,16 @@ The annotations are given in  PASCAL VOC XML and YOLO annotation format.
 
 | Traffic light class  | Train set | Test set | Total |
 | -------------------- | --------- | -------- | ----- |
-| Green (d)            | 1198      | 1251     | 2449  |
-| Empty-count-down (j) | 537       | 225      | 762   |
-| Yellow (b)           | 452       | 246      | 698   |
-| Red (a)              | 565       | 901      | 1466  |
-| Empty (h)            | 222       | 469      | 691   |
-| Count-down (i)       | 346       | 396      | 742   |
-| Green-up (f)         | 426       | 495      | 921   |
-| Red-yellow (c)       | 66        | 80       | 146   |
-| Green-left (e)       | 55        | 105      | 160   |
-| Green-right (g)      | 115       | 171      | 286   |
+| Green                | 1198      | 1251     | 2449  |
+| Empty-count-down     | 537       | 225      | 762   |
+| Yellow               | 452       | 246      | 698   |
+| Red                  | 565       | 901      | 1466  |
+| Empty                | 222       | 469      | 691   |
+| Count-down           | 346       | 396      | 742   |
+| Green-up             | 426       | 495      | 921   |
+| Red-yellow           | 66        | 80       | 146   |
+| Green-left           | 55        | 105      | 160   |
+| Green-right          | 115       | 171      | 286   |
 
 
 ## Image Visualizers
