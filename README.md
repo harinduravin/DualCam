@@ -65,4 +65,14 @@ python3 single_image_visualizer.py
 python3 sync_image_visualizer.py
 ```
 
-![Double frame visualizer](Images/sync_visualizer.jpg)
+<!-- ![Double frame visualizer](Images/sync_visualizer.jpg) -->
+<img src="Images/sync_visualizer.jpg" width=1000>
+
+
+## Camera details
+<img src="Images/camera_details.JPG" width="500">
+
+| Camera | Imaging sensor | Lens | FoV (Vertical) | FoV (Horizontal) | Frame rate (fps) |
+| -------|----------------|------| :----:         | :-----: | :---: |
+|Narrow-angle camera | Basler <br>daA1920-30uc <br>(S-Mount) | Evetar Lens <br>M13B0618W F1.8 <br>f6mm 1/3” lens | 34.5<sup>0</sup> | 48<sup>0</sup> | 30 |
+|Wide-angle camera | Basler <br>daA1920-30uc <br>(CS-Mount) | Theia SY125A/SY125M Lens | 109<sup>0</sup> | 125<sup>0</sup> | 30 |
