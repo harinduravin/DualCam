@@ -2,7 +2,7 @@
 
 ### A video compilation of training set ground truth
 
-[![Test set](https://img.youtube.com/vi/-MDhaj5U6ag/0.jpg)](https://www.youtube.com/watch?v=-MDhaj5U6ag)
+[![Test set](https://img.youtube.com/vi/60hbxs4fvB4/0.jpg)](https://www.youtube.com/watch?v=60hbxs4fvB4)
 
 ## Overview
 DualCam dataset is a benchmark traffic light dataset which covers urban and sub-urban areas. It consists of 2250 annotated images of 1920x1080 resolution with 8321 instances.
