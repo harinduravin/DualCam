@@ -13,10 +13,11 @@ DualCam dataset is a benchmark traffic light dataset which covers urban and sub-
 ## Download
 The train set, test set 1, test set 2, test videos of DualCam traffic light dataset can be downloaded from following google drive links.
 
-* [Train set](https://github.com/harinduravin/DualCam)   - images 1032 (xx GB)
-* [Test set 1](https://drive.google.com/file/d/1q3bCvudmE19KBqS4k_h1aXPyicjZ400C/view?usp=sharing)  - image pairs 335 (547 MB)
-* [Test set 2](https://github.com/harinduravin/DualCam)  - image pairs 478 (xx GB)
-* [Test videos](https://drive.google.com/drive/folders/1n4uyKBaxd0f2EvCdUgiOuMjaTbZh4FpO?usp=sharing) - 28 videos (3.63 GB)
+* [Samples](https://github.com/harinduravin/DualCam) - 10 image pairs (xx MB)
+* [Train set](https://github.com/harinduravin/DualCam) - 1032 images (xx MB)
+* [Test set 1](https://drive.google.com/file/d/1q3bCvudmE19KBqS4k_h1aXPyicjZ400C/view?usp=sharing) - 335 image pairs (547 MB)
+* [Test set 2](https://github.com/harinduravin/DualCam) - 478 image pairs (xx MB)
+* [Test videos](https://drive.google.com/drive/folders/1n4uyKBaxd0f2EvCdUgiOuMjaTbZh4FpO?usp=sharing) - 28 video pairs (3.63 GB)
 
 ## Annotations
 The annotations are given in  PASCAL VOC XML and YOLO annotation format.
