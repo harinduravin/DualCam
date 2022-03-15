@@ -16,7 +16,7 @@ The train set, test set 1, test set 2, test videos of DualCam traffic light data
 * [Train set](https://github.com/harinduravin/DualCam)   - images 1032 (xx GB)
 * [Test set 1](https://drive.google.com/file/d/1q3bCvudmE19KBqS4k_h1aXPyicjZ400C/view?usp=sharing)  - image pairs 335 (547 MB)
 * [Test set 2](https://github.com/harinduravin/DualCam)  - image pairs 478 (xx GB)
-* [Test videos](https://github.com/harinduravin/DualCam) - xx videos (xx GB)
+* [Test videos](https://drive.google.com/drive/folders/1n4uyKBaxd0f2EvCdUgiOuMjaTbZh4FpO?usp=sharing) - 28 videos (3.63 GB)
 
 ## Annotations
 The annotations are given in  PASCAL VOC XML and YOLO annotation format.
