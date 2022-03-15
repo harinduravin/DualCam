@@ -3,8 +3,9 @@
 ### A video compilation of training set ground truth
 
 <!-- [![Test set](https://img.youtube.com/vi/60hbxs4fvB4/0.jpg)](https://www.youtube.com/watch?v=60hbxs4fvB4) -->
-
-<a href="https://www.youtube.com/watch?v=60hbxs4fvB4" target="_blank"><img src="https://img.youtube.com/vi/60hbxs4fvB4/0.jpg" alt="video link" style="width:640px;height:480px;"></a>
+<p align="center" width="100%">
+    <a href="https://www.youtube.com/watch?v=60hbxs4fvB4" target="_blank"><img src="https://img.youtube.com/vi/60hbxs4fvB4/0.jpg" alt="video link" style="width:640px;height:480px;"></a>
+</p>
 
 ## Overview
 DualCam dataset is a benchmark traffic light dataset which covers urban and sub-urban areas. It consists of 2250 annotated images of 1920x1080 resolution with 8321 instances.
@@ -70,7 +71,11 @@ python3 sync_image_visualizer.py
 
 
 ## Camera details
-<img src="Images/camera_details.JPG" width="500">
+<p align="center" width="100%">
+    <img src="Images/camera_details.JPG" width="400">
+</p>
+
+
 
 | Camera | Imaging sensor | Lens | FoV (Vertical) | FoV (Horizontal) | Frame rate (fps) |
 | -------|----------------|------| :----:         | :-----: | :---: |
