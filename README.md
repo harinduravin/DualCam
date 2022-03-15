@@ -40,6 +40,10 @@ The annotations are given in  PASCAL VOC XML and YOLO annotation format.
 
 ```bash
 .
+├── samples
+│   ├── images
+│   ├── xml
+│   └── yolo
 ├── test_1
 │   ├── images
 │   ├── xml
@@ -48,6 +52,7 @@ The annotations are given in  PASCAL VOC XML and YOLO annotation format.
 │   ├── images
 │   ├── xml
 │   └── yolo
+├── test_videos
 └── train
     ├── images
     ├── xml
