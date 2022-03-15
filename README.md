@@ -36,6 +36,23 @@ The annotations are given in  PASCAL VOC XML and YOLO annotation format.
 | Green-left           | 55        | 105      | 160   |
 | Red-yellow           | 66        | 80       | 146   |
 
+## Dataset folder structure 
+
+```bash
+.
+├── test_1
+│   ├── images
+│   ├── xml
+│   └── yolo
+├── test_2
+│   ├── images
+│   ├── xml
+│   └── yolo
+└── train
+    ├── images
+    ├── xml
+    └── yolo
+```
 
 ## Image Visualizers
 We provide 2 visualizers to visualize images with the bounding boxes.
