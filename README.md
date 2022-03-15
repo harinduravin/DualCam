@@ -25,15 +25,15 @@ The annotations are given in  PASCAL VOC XML and YOLO annotation format.
 | Traffic light class  | Train set | Test set | Total |
 | -------------------- | --------- | -------- | ----- |
 | Green                | 1198      | 1251     | 2449  |
-| Empty-count-down     | 537       | 225      | 762   |
-| Yellow               | 452       | 246      | 698   |
 | Red                  | 565       | 901      | 1466  |
-| Empty                | 222       | 469      | 691   |
-| Count-down           | 346       | 396      | 742   |
 | Green-up             | 426       | 495      | 921   |
-| Red-yellow           | 66        | 80       | 146   |
-| Green-left           | 55        | 105      | 160   |
+| Empty-count-down     | 537       | 225      | 762   |
+| Count-down           | 346       | 396      | 742   |
+| Yellow               | 452       | 246      | 698   |
+| Empty                | 222       | 469      | 691   |
 | Green-right          | 115       | 171      | 286   |
+| Green-left           | 55        | 105      | 160   |
+| Red-yellow           | 66        | 80       | 146   |
 
 
 ## Image Visualizers
@@ -76,3 +76,6 @@ python3 sync_image_visualizer.py
 | -------|----------------|------| :----:         | :-----: | :---: |
 |Narrow-angle camera | Basler <br>daA1920-30uc <br>(S-Mount) | Evetar Lens <br>M13B0618W F1.8 <br>f6mm 1/3” lens | 34.5<sup>0</sup> | 48<sup>0</sup> | 30 |
 |Wide-angle camera | Basler <br>daA1920-30uc <br>(CS-Mount) | Theia SY125A/SY125M Lens | 109<sup>0</sup> | 125<sup>0</sup> | 30 |
+
+* [narrow-angle camera data](/camera_data/narrow-angle_camera_data.txt)
+* [wide-angle camera data](/camera_data/wide-angle_camera_data.txt)
