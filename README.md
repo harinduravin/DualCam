@@ -14,9 +14,9 @@ DualCam dataset is a benchmark traffic light dataset which covers urban and sub-
 The train set, test set 1, test set 2, test videos of DualCam traffic light dataset can be downloaded from following google drive links.
 
 * [Samples](https://github.com/harinduravin/DualCam) - 10 image pairs (xx MB)
-* [Train set](https://github.com/harinduravin/DualCam) - 1032 images (xx MB)
+* [Train set](https://drive.google.com/file/d/14AprSCy_o2vMDTP3wtUuyhWb8tXNE7kR/view?usp=sharing) - 1032 images (479 MB)
 * [Test set 1](https://drive.google.com/file/d/1q3bCvudmE19KBqS4k_h1aXPyicjZ400C/view?usp=sharing) - 335 image pairs (547 MB)
-* [Test set 2](https://github.com/harinduravin/DualCam) - 478 image pairs (xx MB)
+* [Test set 2](https://drive.google.com/file/d/11NHDb9JnMwjljbfxmOTJ10IL7ni8AGnL/view?usp=sharing) - 478 image pairs (751 MB)
 * [Test videos](https://drive.google.com/drive/folders/1n4uyKBaxd0f2EvCdUgiOuMjaTbZh4FpO?usp=sharing) - 28 video pairs (3.63 GB)
 
 ## Annotations
