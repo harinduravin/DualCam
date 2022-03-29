@@ -4,6 +4,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QPixmap, QKeySequence, QImage
 import cv2
 import os
+import glob
 import sys
 import shutil
 from data import Data
@@ -17,10 +18,15 @@ class UI(QMainWindow):
         self.ft = cv2.freetype.createFreeType2()
         self.ft.loadFontData(fontFileName='Ubuntu-R.ttf',id=0)
 
-        self.file_path = "/home/fyp2selfdriving/Downloads/dataset_2022_03_11/sample"
+        self.file_path = "/home/fyp2selfdriving/Documents/traffic_light/Yolov5/datasets/Finalized_set/DualCam/samples"
         self.save_path = ""        
         self.index = 1
 
+        self.img_list  = self.getImagesInDir(self.file_path + "/images")
+        self.img_list.sort()
+
+        self.narrow_img_list = self.img_list[:int(len(self.img_list)/2)]
+        self.wide_img_list = self.img_list[int(len(self.img_list)/2):]
 
         # Load the ui file
         uic.loadUi("image.ui", self)
@@ -63,24 +69,23 @@ class UI(QMainWindow):
             self.view_img()
 
     def view_img(self):
-        fnamenarrow = self.file_path + "/narrow_t2_" + self.convert_to_str(self.index) + ".jpg"
-        fnamewide = self.file_path + "/wide_t2_" + self.convert_to_str(self.index) + ".jpg"
+        _, fnamenarrow = os.path.split(self.narrow_img_list[self.index-1])
+        _, fnamewide = os.path.split(self.wide_img_list[self.index-1])
 
-
-        narrow_image_data = Data(fnamenarrow)
+        narrow_image_data = Data(fnamenarrow, self.file_path)
         bbox_narrow = self.process_image(narrow_image_data,False,True, self.ft)
         bbox_narrow = QImage(bbox_narrow, bbox_narrow.shape[1],\
                             bbox_narrow.shape[0], bbox_narrow.shape[1] * 3,QImage.Format_RGB888)
 
-        wide_image_data = Data(fnamewide)
+        wide_image_data = Data(fnamewide, self.file_path)
         bbox_wide = self.process_image(wide_image_data,False,True, self.ft)
         bbox_wide = QImage(bbox_wide, bbox_wide.shape[1],\
                             bbox_wide.shape[0], bbox_wide.shape[1] * 3,QImage.Format_RGB888)
 
         self.pixmapnarrow = QPixmap(bbox_narrow)
         self.pixmapwide = QPixmap(bbox_wide)
-        self.labelnarrowtext.setText("narrow_t2_" + self.convert_to_str(self.index) + ".jpg")
-        self.labelwidetext.setText("wide_t2_" + self.convert_to_str(self.index) + ".jpg")
+        self.labelnarrowtext.setText(fnamenarrow)
+        self.labelwidetext.setText(fnamewide)
         self.labelnarrow.setPixmap(self.pixmapnarrow.scaled(self.labelnarrow.size(),Qt.KeepAspectRatio,Qt.SmoothTransformation))
         self.labelwide.setPixmap(self.pixmapwide.scaled(self.labelwide.size(),Qt.KeepAspectRatio,Qt.SmoothTransformation))
         self.labelnarrow.setScaledContents = True
@@ -88,13 +93,6 @@ class UI(QMainWindow):
         self.labelnarrow.setSizePolicy(QSizePolicy.Ignored,QSizePolicy.Ignored)
         self.labelwide.setSizePolicy(QSizePolicy.Ignored,QSizePolicy.Ignored)
 
-    def save_imgs(self):
-        fnamenarrow = self.file_path + "2_narrow/narrow_2_" + self.convert_to_str(self.index) + ".jpg"
-        fnamewide = self.file_path + "2_wide/wide_2_" + self.convert_to_str(self.index) + ".jpg"
-        fnamenarrowsave = self.save_path + "narrow_2_" + self.convert_to_str(self.index) + ".jpg"
-        fnamewidesave = self.save_path + "wide_2_" + self.convert_to_str(self.index) + ".jpg"
-        shutil.copyfile(fnamenarrow , fnamenarrowsave)
-        shutil.copyfile(fnamewide , fnamewidesave)
 
     def process_image(self,image_data,with_mask=False,with_bbox=False,fontft=None):
         image_data.image_path = image_data.image_path
@@ -122,6 +120,14 @@ class UI(QMainWindow):
 
     def convert_to_str(self,ind):
         return '{0:03}'.format(ind)
+
+
+    def getImagesInDir(self,dir_path):
+        image_list = []
+        for filename in glob.glob(dir_path + '/*.jpg'):
+            image_list.append(filename)
+
+        return image_list
 
 # Initialize The App
 

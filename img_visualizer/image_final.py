@@ -18,7 +18,7 @@ class UI(QMainWindow):
         self.ft.loadFontData(fontFileName='Ubuntu-R.ttf',id=0)
 #/home/fyp2selfdriving/Documents/traffic_light/paper/bbox_concatenate/xml_files/concat
 #/home/fyp2selfdriving/Documents/traffic_light/Yolov5/datasets/dualcam/images/test
-        self.img_path = "/home/fyp2selfdriving/Documents/traffic_light/Yolov5/datasets/dualcam/images/test"
+        self.img_path = "/home/fyp2selfdriving/Documents/traffic_light/Yolov5/datasets/dualcam/images/train/wide"
         self.save_path = ""        
         self.index = 1
 
@@ -64,7 +64,7 @@ class UI(QMainWindow):
             self.view_img()
 
     def view_img(self):
-        fnamenarrow = self.img_path + "/wide_t1_" + self.convert_to_str(self.index) + ".jpg"
+        fnamenarrow = self.img_path + "/wide_tr_" + self.convert_to_str(self.index) + ".jpg"
 
         narrow_image_data = Data(fnamenarrow)
         bbox_narrow = self.process_image(narrow_image_data,False,True, self.ft)
@@ -73,7 +73,7 @@ class UI(QMainWindow):
 
         self.pixmapnarrow = QPixmap(bbox_narrow)
 
-        self.labelnarrowtext.setText("t1_" + self.convert_to_str(self.index) + ".xml")
+        self.labelnarrowtext.setText("tr_" + self.convert_to_str(self.index) + ".xml")
 
         self.labelnarrow.setPixmap(self.pixmapnarrow.scaled(self.labelnarrow.size(),Qt.KeepAspectRatio,Qt.SmoothTransformation))
 

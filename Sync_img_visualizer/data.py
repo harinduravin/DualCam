@@ -14,10 +14,11 @@ class Entity():
 
 
 class Data():
-    def __init__(self, image_path):
+    def __init__(self, image_name, root_path):
         # self.image_name = image_name
-        self.image_path = image_path
-        self.annotation_path = image_path[:-4] + ".xml"
+
+        self.image_path = os.path.join(root_path,"images",image_name)
+        self.annotation_path = os.path.join(root_path,"xml",image_name[:-4] + ".xml")
         # self.mask_path=os.path.join(root_dir,'SegmentationClass',image_name+'.png')
         self.annotations = self.load_masks()
 
