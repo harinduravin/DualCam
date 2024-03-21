@@ -107,3 +107,16 @@ python3 sync_image_visualizer.py
 
 * [narrow-angle camera data](/camera_data/narrow-angle_camera_data.txt)
 * [wide-angle camera data](/camera_data/wide-angle_camera_data.txt)
+
+Please consider citing our paper, if you find our dataset valuable for your research
+
+```bash
+@inproceedings{dualcam2023,
+  author={Jayarathne, Harindu and Samarakoon, Tharindu and Koralege, Hasara and Divisekara, Asitha and Rodrigo, Ranga and Jayasekara, Peshala},
+  booktitle={2023 International Conference on Machine Learning and Applications (ICMLA)}, 
+  title={DualCam: A Novel Benchmark Dataset for Fine-Grained Real-Time Traffic Light Detection}, 
+  year={2023},
+  pages={1778-1783},
+  doi={10.1109/ICMLA58977.2023.00270}
+}
+```
